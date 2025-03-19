@@ -1,8 +1,14 @@
+"use client";
+
 import { ListFilter, LogOut, MessageSquareDiff, Search, User } from "lucide-react";
 import { Input } from "../ui/input";
 import ThemeSwitch from "./theme-switch";
 import { conversations } from "@/dummy-data/db";
 import Conversation from "./conversation";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, useAuth, UserButton, useUser } from "@clerk/nextjs";
+import { useMutation } from "convex/react";
+import { useEffect } from "react";
+import { api } from "../../../convex/_generated/api";
 
 const LeftPanel = () => {
 
@@ -11,12 +17,24 @@ const LeftPanel = () => {
 			<div className='sticky top-0 bg-left-panel z-10'>
 				{/* Header */}
 				<div className='flex justify-between bg-gray-primary p-3 items-center'>
-					<User size={24} />
+					{/* User Section (Keeps Space Consistent) */}
+					<div className="flex items-center">
+						<SignedOut>
+							{/* Show User Icon Instead of Sign In/Sign Up */}
+							<SignInButton>
+								<User size={24}/>
+							</SignInButton>
+						</SignedOut>
+
+						<SignedIn>
+							<UserButton />
+						</SignedIn>
+					</div>
 
 					<div className='flex items-center gap-3'>
 						<MessageSquareDiff size={20} /> {/* TODO: This line will be replaced with <UserListDialog /> */}
 						<ThemeSwitch />
-						<LogOut size={20} className='cursor-pointer' />
+						
 					</div>
 				</div>
 				<div className='p-3 flex items-center'>
