@@ -1,7 +1,7 @@
 const authConfig = {
     providers: [
       {
-        domain: "https://humane-bird-71.clerk.accounts.dev",
+        domain: "https://oriented-spaniel-19.clerk.accounts.dev",
         applicationID: "convex",
       },
     ]

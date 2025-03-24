@@ -5,6 +5,7 @@ import { ThemeProvider } from './../providers/theme-provider';
 import  ConvexClientProvider  from "@/providers/convex-client-provider";
 import { ClerkProvider } from '@clerk/nextjs';
 import { SafeHydration } from "@/providers/SafeHydration";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
             <ConvexClientProvider>
               <main className="w-screen h-screen flex">
                     {children}
+                    <Toaster />
               </main>
               </ConvexClientProvider>
             </ThemeProvider>

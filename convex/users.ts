@@ -87,6 +87,8 @@ export const getMe = query({
   args: {},
   handler: async(ctx, args) => {
     const identity = await ctx.auth.getUserIdentity();
+    // console.log("User Identity from Clerk:", identity);
+
     if(!identity) {
       throw new ConvexError("Unauthorized");
     }
