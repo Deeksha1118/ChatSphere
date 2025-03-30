@@ -1,6 +1,6 @@
 import { ConvexError, v } from "convex/values";
 import { mutation, query } from "./_generated/server";
-import { conversations } from './../src/dummy-data/db';
+
 
 export const createConversation = mutation({
     args: {
