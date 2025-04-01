@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {hostname: "little-starling-755.convex.cloud"}
+    ],
+  },
 };
 
 export default nextConfig;
