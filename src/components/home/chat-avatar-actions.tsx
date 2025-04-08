@@ -32,7 +32,7 @@ const ChatAvatarActions = ({me, message}:ChatAvatarActionsProps) => {
                 ...selectedConversation,
                 participants: selectedConversation.participants.filter((id) =>id !== message.sender._id)
             })
-        } catch (err) {
+        } catch {
             toast.error("Failed to kick user");
         }
     }
@@ -53,7 +53,7 @@ const ChatAvatarActions = ({me, message}:ChatAvatarActionsProps) => {
                 isOnline: message.sender.isOnline,
                 image: message.sender.image,
             })
-        } catch(err) {
+        } catch {
             toast.error("Failed to create conversation");
         }
     }

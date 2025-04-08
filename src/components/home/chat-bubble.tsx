@@ -12,7 +12,7 @@ import { Bot } from "lucide-react";
 type ChatBubbleProps = {
 	message: IMessage;
 	me: any;
-	previousMessage: IMessage;
+	previousMessage?: IMessage;
 }
 
 const ChatBubble = ({me, message, previousMessage}: ChatBubbleProps) => {
