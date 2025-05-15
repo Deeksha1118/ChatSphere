@@ -66,7 +66,7 @@ export default {
 			"green-chat": "hsl(var(--green-chat))",
 		},
 		backgroundImage: {
-			"chat-tile-light": "url('/bg-light.png')",
+			"chat-tile-light": "url('/white-bg.jpg')",
 			"chat-tile-dark": "url('/bg-dark.png')",
 		},
   		borderRadius: {
